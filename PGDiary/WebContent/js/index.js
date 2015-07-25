@@ -110,8 +110,8 @@ $(document).on("pageload", "#addPage", function(e) {
 	
 	$("#takePicture").on("touchstart", function(e) {
 		alert('Take Photo');
-		takePhoto();
-		//navigator.camera.getPicture(onCamSuccess, onCamFail, {quality:50, destinationType:Camera.DestinationType.FILE_URI});
+		//takePhoto();
+		navigator.camera.getPicture(onCamSuccess, onCamFail, {quality:50, destinationType:Camera.DestinationType.FILE_URI});
 	});
 	
 	$("#addEntrySubmit").on("touchstart", function(e) {
@@ -147,14 +147,14 @@ function dtFormat(input) {
 }
 function takePhoto(){
 	//syncThePhoto(CurrentNotifNo,"xx")
+	//navigator.camera.getPicture(onCamSuccess, onCamFail, {quality:50, destinationType:Camera.DestinationType.FILE_URI});
+
 	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-	    destinationType: Camera.DestinationType.DATA_URL});
+	    destinationType: Camera.DestinationType.FILE_URI});
 }
 
 function onSuccess(imageData) {
-    
-    //var b64data = "data:image/jpeg;base64," + imageData;
-alert("success");
+
 $("#entryPicture").val(imgdata);
 $("#imgPreview").attr("src", imgdata);
 }
