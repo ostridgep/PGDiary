@@ -155,7 +155,8 @@ function onSuccess(imageData) {
     
     //var b64data = "data:image/jpeg;base64," + imageData;
 alert("success");
-    //syncThePhoto(CurrentNotifNo,b64data)
+$("#entryPicture").val(imgdata);
+$("#imgPreview").attr("src", imgdata);
 }
 
 function onFail(message) {
