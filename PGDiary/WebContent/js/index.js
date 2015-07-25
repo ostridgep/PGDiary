@@ -110,7 +110,7 @@ $(document).on("pageload", "#addPage", function(e) {
 	
 	$("#takePicture").on("touchstart", function(e) {
 		e.preventDefault();
-		
+		takePhoto();
 		navigator.camera.getPicture(onCamSuccess, onCamFail, {quality:50, destinationType:Camera.DestinationType.FILE_URI});
 	});
 	
@@ -144,4 +144,20 @@ function dtFormat(input) {
     if(minute < 10) minute = "0" + minute;
     res += hour + ":" + minute + " " + ampm;
     return res;
+}
+function takePhoto(){
+	//syncThePhoto(CurrentNotifNo,"xx")
+	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+	    destinationType: Camera.DestinationType.DATA_URL});
+}
+
+function onSuccess(imageData) {
+    
+    //var b64data = "data:image/jpeg;base64," + imageData;
+alert("success");
+    //syncThePhoto(CurrentNotifNo,b64data)
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
 }
