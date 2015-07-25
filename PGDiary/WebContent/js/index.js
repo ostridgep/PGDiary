@@ -109,9 +109,9 @@ $(document).on("pageload", "#addPage", function(e) {
 	}
 	
 	$("#takePicture").on("touchstart", function(e) {
-		e.preventDefault();
+		alert('Take Photo');
 		takePhoto();
-		navigator.camera.getPicture(onCamSuccess, onCamFail, {quality:50, destinationType:Camera.DestinationType.FILE_URI});
+		//navigator.camera.getPicture(onCamSuccess, onCamFail, {quality:50, destinationType:Camera.DestinationType.FILE_URI});
 	});
 	
 	$("#addEntrySubmit").on("touchstart", function(e) {
